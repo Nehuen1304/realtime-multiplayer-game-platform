@@ -1,0 +1,90 @@
+/* Posicionamiento de oponentes */
+.opponent {
+  position: absolute;
+  z-index: 1;
+}
+
+.opponent.requester {
+  z-index: 5; /* sube solo el solicitante durante el trade */
+}
+
+/* 1 oponente */
+.center-slot {
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 2 oponentes */
+.center-left {
+  top: 20%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.center-right {
+  top: 20%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+/* Layout radial (3–5) */
+.slot-1 {
+  top: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slot-2 {
+  top: 15%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+.slot-3 {
+  top: 15%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.slot-4 {
+  top: 40%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+.slot-5 {
+  top: 40%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+
+  /* 2 oponentes */
+  .center-left {
+    top: 13%;
+  }
+
+  .center-right {
+    top: 13%;
+  }
+
+  .slot-1 {
+    top: 2%;
+  }
+  .slot-2 {
+    top: 10%;
+  }
+  .slot-3 {
+    top: 10%;
+  }
+
+  .slot-4 {
+    top: 58%;
+  }
+
+  .slot-5 {
+    top: 58%;
+  }
+}

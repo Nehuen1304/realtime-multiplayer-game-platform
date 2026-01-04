@@ -1,0 +1,29 @@
+.pantalla-inicio-container {
+  /* font is applied here and inherited by children */
+
+  font-family: var(--font-family-main);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.5rem;
+  /* padding: 20px; */
+
+  /* height: 100vh;
+  width: 100vw; */
+  background-color: var(--color-red);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pantalla-inicio-logo {
+  /* object-fit: contain; */
+  /* pointer-events: none; */
+  margin-bottom: 5rem;
+  max-width: 90%;
+  max-height: 25%;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.35));
+}
+

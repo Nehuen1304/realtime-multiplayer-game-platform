@@ -1,0 +1,57 @@
+/* Estilos para el contenedor de un set de detective */
+.detective-set-container {
+    display: flex;
+    position: relative;
+}
+
+/* Superposición horizontal para las cartas del set */
+.detective-set-container .carta-visual.extrasmall:not(:first-child) {
+    margin-left: -1.3rem;
+}
+
+/* Hover cartas de detective en el set de OPONENTES (los extrasmall)*/
+.detective-set-container .carta-visual.extrasmall:hover:not(.selected) {
+    transform: scale(2.5) rotate(-3deg);
+    z-index: 30;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.8), 0 0 40px rgba(240,230,210,0.18);
+}
+
+/* Efecto hover y adyacentes para detective-set */
+.detective-set-container[data-hovered="true"] .carta-visual[data-diff="0"] {
+    transform: translateY(-12px) scale(1.7) rotate(-2deg);
+    z-index: 20;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.7), 0 0 32px rgba(240,230,210,0.18);
+    opacity: 1;
+}
+
+/* Variable para saber si la carta está a la derecha o izquierda de la seleccionada */
+.cartas-wrapper[data-hovered="true"] .carta-visual[data-diff="1"] { --sign: 1; }
+.cartas-wrapper[data-hovered="true"] .carta-visual[data-diff="-1"] { --sign: -1; }
+
+.detective-set-container[data-hovered="true"] .carta-visual[data-diff="1"] { --sign: 1; }
+.detective-set-container[data-hovered="true"] .carta-visual[data-diff="-1"] { --sign: -1; }
+
+.detective-set-container[data-hovered="true"] .carta-visual[data-diff="1"],
+.detective-set-container[data-hovered="true"] .carta-visual[data-diff="-1"] {
+    z-index: 15;
+    opacity: 0.85;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transform: translateY(-4px) scale(1.2) translateX(calc(3.2rem * var(--sign, 1)));
+}
+
+/* OPONENTES */
+.detective-set-container[data-hovered="true"] .carta-visual.extrasmall[data-diff="1"],
+.detective-set-container[data-hovered="true"] .carta-visual.extrasmall[data-diff="-1"] {
+    z-index: 15;
+    opacity: 0.88;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    transform: scale(2.1) translateX(calc(1rem * var(--sign, 1)));
+}
+
+
+.detective-set-container[data-hovered="true"] .carta-visual[data-diff="2"]:not(.selected),
+.detective-set-container[data-hovered="true"] .carta-visual[data-diff="-2"]:not(.selected) {
+    opacity: 0.5;
+    z-index: 1;
+}
+
