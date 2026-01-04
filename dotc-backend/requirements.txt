@@ -1,9 +1,0 @@
-# Dependencias principales
-fastapi
-uvicorn[standard]
-sqlalchemy
-websockets
-
-# Dependencias para desarrollo (testing)
-pytest
-httpx
