@@ -1,0 +1,86 @@
+/* import the Raleway font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+
+/* Variables CSS globales en :root */
+:root {
+    --color-primary-red: #b91c1c;
+    --color-primary-yellow: #FAEAAE;
+    --color-primary-yellow-dark: #dfd09a;
+    --color-primary-yellow-darkplus: #d5c58c;
+    --color-primary-red-dark: #9b171b;
+    --color-primary-red-darkplus: #7e1216;
+    --color-primary-red-light: #fb383f;
+
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-grey-light: #cccccc;
+    --color-grey-dark: #666666;
+
+    --hud: 42vh;
+
+    --font-family-main: 'Raleway', sans-serif;
+
+    --card-width: 7.2rem;   
+    --card-height: 10.1rem;
+    --card-radius: 0.4rem;
+
+    --card-small-factor: 0.58;
+    --card-extrasmall-factor: 0.24;
+    --card-secret-factor: 0.40; /* cartas de secreto en mano */
+}
+
+/* evitar la selección de texto y elementos en toda la aplicación */
+body, * {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}
+
+/* Define los estilos base para la aplicación */
+body {
+    margin: 0;
+    padding: 0; 
+    font-family: var(--font-family-main);
+    background-color: #f4f4f4;
+    /* background: url('./assets/background.png') center center / cover no-repeat fixed; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Centra el contenido directo del body */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la pantalla */
+    width: 100%;
+}
+
+h2 {
+    font-family: var(--font-family-main);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+
+}
+
+
+@keyframes selectedGlow {
+    0% {
+        filter: brightness(1) saturate(1);
+    }
+    100% {
+        filter: brightness(1.2) saturate(1.3);
+    }
+}
+
+
+
+
+/* Optional: A global reset for box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+

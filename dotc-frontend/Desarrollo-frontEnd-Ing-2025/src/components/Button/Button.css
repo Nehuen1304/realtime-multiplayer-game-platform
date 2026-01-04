@@ -1,0 +1,84 @@
+/* 1. In .button-global, keep ONLY the styles that are common to ALL buttons. */
+/* We remove background-color and color from here. */
+.button-global {
+  font-family: var(--font-family-main);
+  border: 2px solid transparent;
+  /* Added a transparent border to prevent size jumps on hover */
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* margin-top: 3rem; */
+  padding: 16px 48px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+
+/* 2. Create the styles for the PRIMARY (default) button variant */
+.button-primary {
+  background-color: var(--color-primary-yellow);
+  color: var(--color-primary-red);
+}
+
+.button-inverted {
+  background-color: var(--color-primary-red);
+  color: var(--color-primary-yellow);
+}
+
+.button-inverted:hover:not(:disabled) {
+  background-color: var(--color-primary-yellow-dark);
+  color: var(--color-primary-red);
+}
+
+.button-smallred {
+
+  font-size:1.2rem;
+  background-color: var(--color-primary-red-light);
+  color: var(--color-primary-red-dark);
+  padding: 0.5rem 0.5rem;
+}
+
+.button-smallred:hover:not(:disabled) {
+  background-color: var(--color-primary-red-dark);
+  color: rgb(250, 99, 99);
+}
+
+.button-small {
+
+  font-size:1.2rem;
+  background-color: var(--color-primary-yellow);
+  color: var(--color-primary-red);
+  padding: 0.5rem 0.5rem;
+}
+
+.button-small:hover:not(:disabled) {
+  background-color: var(--color-primary-red-darkplus);
+  color: var(--color-primary-yellow);
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-red-dark);
+  color: var(--color-primary-yellow);
+}
+
+/* 3. Create the styles for the NEW CANCEL button variant */
+.button-cancel {
+  background-color: var(--color-primary-red-light);
+  color: var(--color-primary-red-dark);
+
+}
+
+.button-cancel:hover:not(:disabled) {
+  background-color: var(--color-primary-red-dark);
+  color: black;
+}
+
+/* 4. The disabled state is the same for all variants, so it can target the base class. */
+.button-global:disabled {
+  background-color: var(--color-grey-light);
+  color: var(--color-grey-dark);
+  cursor: not-allowed;
+}

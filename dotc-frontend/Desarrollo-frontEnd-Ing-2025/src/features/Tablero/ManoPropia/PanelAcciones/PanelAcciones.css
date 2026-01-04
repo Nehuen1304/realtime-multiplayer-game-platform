@@ -1,0 +1,91 @@
+.panel-acciones-container {
+  display: flex;             /* 1. Pone los botones en una fila */
+  justify-content: center;   /* 2. Los centra horizontalmente */
+  align-items: center;       /* 3. Los alinea verticalmente */
+  gap: 20px;                 /* 4. AÑADE ESPACIO ENTRE LOS BOTONES */
+  width: 100%;               /* Ocupa todo el ancho disponible */
+  padding: 20px 0;           /* Espacio vertical para que no se pegue a la mano */
+}
+
+/* FAB oculto por defecto (solo móvil lo muestra) */
+.fab-container { display: none; }
+
+@media (max-width: 768px) {
+  /* En móviles ocultar el panel horizontal */
+  .panel-acciones-container {
+    display: none;
+  }
+  /* Mostrar FAB */
+  .fab-container {
+    display: block;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1000;
+  }
+}
+
+.fab {
+  background: none;
+  box-shadow: none;
+  border-radius: 8px;
+  color: inherit;
+  width: auto;
+  height: auto;
+  font-size: inherit;
+  padding: 0;
+}
+
+.fab:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Overlay y sheet del menú */
+.fab-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 999;
+  display: flex;
+  align-items: flex-end;
+}
+
+.fab-sheet {
+  width: 100%;
+  background: #fff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 -8px 20px rgba(0,0,0,0.2);
+  max-height: 75vh;
+  overflow-y: auto;
+  animation: sheetSlideUp .18s ease-out;
+}
+
+.fab-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.fab-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.fab-actions {
+  display: grid;
+  gap: 12px;
+}
+
+@keyframes sheetSlideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

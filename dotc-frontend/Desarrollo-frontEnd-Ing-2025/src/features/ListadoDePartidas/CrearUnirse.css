@@ -1,0 +1,101 @@
+.pantalla-crear-unirse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.5rem;
+  /* padding: 20px; */
+
+  /* height: 100vh;
+  width: 100vw; */
+  background-color: var(--color-red);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.search-container {
+  align-self: center;
+  width: 100%;
+
+}
+
+.search-input {
+  background-color: var(--color-primary-yellow);
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  /* Ensures padding doesn't affect final width */
+}
+
+.search-input:focus {
+  outline: #c73737;
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* scrollable container for the game items */
+.games-scroll-container {
+  overflow-y: auto;
+  /* This adds a scrollbar ONLY when the content overflows */
+  flex-grow: 1;
+  /* Allows this element to fill the available space in the flex container */
+
+  /* Adds a small gap between game items */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  /* Optional: A little padding on the right to prevent the scrollbar from touching the content */
+  padding-right: 10px;
+
+  /* For Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #8d8462 var(--color-primary-yellow-dark);
+
+}
+
+.games-scroll-container::-webkit-scrollbar-track {
+  background: var(--color-primary-yellow);
+  /* Color of the tracking area */
+  border-radius: 20px;
+}
+
+/* when no games are found */
+.no-results-message {
+  text-align: center;
+  color: #555;
+  margin-top: 2rem;
+}
+
+.Lista-partidas {
+  width: min(90vw, 45rem);
+  /* máximo 45rem, pero no más del 90% del ancho de la ventana */
+  max-height: 50vh;
+  /* nunca más alto que el 70% de la ventana */
+  background-color: var(--color-primary-yellow);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  /* separación superior proporcional a la altura */
+  /* margin-top: 5vh;              */
+}
+
+.Logo-CrearUnirse {
+  /* position: fixed; */
+  /* top: 8vh; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  max-height: 25%;
+  max-width: 90%;
+  z-index: 100;
+  /* display: block; */
+}

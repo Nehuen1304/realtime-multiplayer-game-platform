@@ -1,0 +1,61 @@
+.total-creacion {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form {
+  background-color: var(--color-primary-yellow);
+  display: flex;
+  
+  flex-direction: column;
+  gap: 1.5rem
+
+}
+
+.rango {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+.error-message {
+  color: #D8000C;
+  /* Rojo oscuro para el texto */
+  background-color: #FFD2D2;
+  /* Fondo rojo claro */
+  border: 1px solid #D8000C;
+  /* Borde rojo */
+  border-radius: 6px;
+  padding: 10px 15px;
+  /* Espaciado interno */
+  margin-top: 15px;
+  /* Espacio para separarlo de los campos */
+  margin-bottom: 5px;
+  /* Espacio antes de los botones */
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+  /* Misma animación que el formulario */
+}
+
+.MuiSlider-markLabel,
+.MuiSlider-valueLabel {
+  font-family: 'Raleway', sans-serif !important;
+}

@@ -1,0 +1,78 @@
+.lobby-container {
+
+    display: flex; /* Keep this to align its internal children */
+    flex-direction: column;
+    align-items: center; /* Keep this to center content horizontally */
+
+    
+    background: transparent;
+    gap: 2rem;
+    /* Add space at the bottom */
+    margin-bottom: 48px;
+   
+
+
+}
+
+.lobby-container h2 {
+    margin-bottom: 24px;
+    color: var(--color-primary-red);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.lobby-player-list {
+    list-style:none;
+    padding: 0;
+    margin: 0 0 24px 0;
+
+    /* --- NEW STYLES for scrollable content --- */
+    /* Set a maximum height before scrolling starts */
+    min-height:max-content;
+    /* Allow scrolling only on the vertical axis */
+    overflow-y:auto;
+    /* Optional: Add horizontal padding/border for aesthetics */
+    /* border: 1px solid var(--color-primary-yellow-dark);  */
+    /* padding: 10px; */
+    width: 100%; /* vEnsure it takes the full width of the container */
+    /* box-sizing: border-box; Include padding/border in the 100% width */
+}
+
+.lobby-player-list li {
+    font-size: 1.3rem;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-primary-yellow-dark);
+    color: var(--color-text-dark);
+}
+
+.lobby-player-list li span {
+    color: var(--color-primary-red);
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.lobby-start-btn {
+    background-color: var(--color-primary-red);
+    color: var(--color-primary-yellow);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 16px;
+    
+}
+
+.lobby-start-btn:hover {
+    background-color: var(--color-primary-red-dark);
+}
+
+.lobby-waiting {
+    color: white;
+    margin-top: 16px;
+    font-size: 1.5rem;
+    padding: 2rem;
+    font-weight: 700;
+}

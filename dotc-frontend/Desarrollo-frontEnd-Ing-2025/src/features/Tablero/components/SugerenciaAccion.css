@@ -1,0 +1,24 @@
+.action-suggestion {
+    font-weight: 700;
+    position: fixed;
+    transform: translate(0, -7rem);
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0fff4 100%);
+    border: 1px solid #a5b4fc;
+    border-radius: 12px;
+    padding: 0px 22px;
+    z-index: 60;
+    opacity: 1;
+    /* display: flex; */
+    align-items: center;
+    /* pointer-events: none; */
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(.4,0,.2,1);
+    max-height: 6rem;
+    max-width: 20rem;
+    overflow-y:auto;
+    text-overflow: ellipsis;
+}
+
+.action-suggestion.hidden {
+    opacity: 0;
+    transform: translate(0, -2rem);
+}

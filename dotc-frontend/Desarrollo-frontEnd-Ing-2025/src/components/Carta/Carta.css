@@ -1,0 +1,135 @@
+.carta-visual {
+    flex: 0 0 auto; /* evita que se estiren o achiquen */
+    width: var(--card-width);
+    height: var(--card-height);
+    aspect-ratio: 5/7;
+    /* background-color: #2e2e2e; */
+    /* Fondo oscuro como en la imagen */
+    /* border: 2px solid #444; */
+    border-radius: var(--card-radius);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Unificar transición aquí para que todas las transformaciones animen igual */
+    transition:
+        transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 180ms;
+    /* PARA CENTRAR */
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+
+    /* Estilos para el texto dentro de la carta */
+    /* color: #e0e0e0; */
+    /* Color de texto claro */
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    /* Asegura que el texto se centre si ocupa varias líneas */
+    /* padding: 10px; Añade un poco de espacio para que el texto no toque los bordes */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño total */
+    /* Para que el usuario no pueda seleccionarlo como texto */
+    user-select: none;
+    overflow: hidden;
+    -webkit-touch-callout: none;   /* por si el toque recae en el wrapper */
+}
+
+.carta-inner {
+    width: 100%;
+    height: 100%;
+    transform: translateY(0) scale(1);
+    transition: transform 350ms cubic-bezier(.22, 1, .36, 1);
+    overflow: visible;
+}
+
+/* Animación de hover piola - SOLO si NO está seleccionada */
+/* .carta-visual:hover:not(.selected) {
+    transform: scale(3) translateY(-10px) rotate(-3deg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 32px rgba(240, 230, 210, 0.15);
+    z-index: 20;
+} */
+
+/* --- SMALL VARIANT STYLES --- */
+.carta-visual.small {
+    /* Reduce dimensions */
+    width: calc(var(--card-width) * var(--card-small-factor));
+    height: calc(var(--card-height) * var(--card-small-factor));
+    font-size: 0.75rem;
+    border-radius: calc(var(--card-radius) * var(--card-small-factor));
+}
+
+.carta-visual.extrasmall {
+    width: calc(var(--card-width) * var(--card-extrasmall-factor));
+    height: calc(var(--card-height) * var(--card-extrasmall-factor));
+    font-size: 0.55rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: calc(var(--card-radius) * var(--card-extrasmall-factor));
+}
+
+.carta-visual.extrasmall,
+.carta-visual.extrasmall .carta-image {
+    /* border-radius: 4px; */
+}
+
+/* Add to Carta.css */
+.carta-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Evita que el long-press apunte al <img> */
+    pointer-events: none;
+    -webkit-touch-callout: none;   /* iOS/Chrome */
+    -webkit-user-drag: none;       /* evita “arrastrar/guardar” */
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+@keyframes scaleInCardPreview {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.7);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -60%) scale(1);
+    }
+}
+
+.card-zoom-preview {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 1000;
+    pointer-events: none;
+    padding: 1rem;
+    opacity: 1;
+    animation: scaleInCardPreview 180ms cubic-bezier(.22, 1, .36, 1);
+
+}
+
+.card-zoom-preview .carta-visual {
+    width: 18rem;
+    height: 27rem;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --card-width: 6rem;
+        --card-height: 8.5rem;
+    }
+}
+
+.carta-visual.target {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2) !important;
+    z-index: 20;
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms;
+    will-change: transform, opacity, box-shadow;
+    animation: selectedGlow 1.5s ease-in-out infinite alternate;
+}

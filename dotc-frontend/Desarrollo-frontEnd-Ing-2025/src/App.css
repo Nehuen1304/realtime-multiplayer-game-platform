@@ -1,0 +1,32 @@
+@import "./index.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  /* fondo de puntos */
+  /* background:
+    radial-gradient(circle, rgba(0, 0, 0, 0.233) 1px, transparent 1px) repeat,
+    var(--color-primary-red);
+  background-size: 24px 24px; */
+  --s: 4px; 
+  --color-primary-red-light-dim: color-mix(in oklab, var(--color-primary-red-light) 85%, black);
+  --g: repeating-conic-gradient(var(--color-primary-red-dark) 0 25%,var(--color-primary-red-light-dim) 0 50%) 0/;
+  background:
+    var(--g) calc(1*var(--s)) calc(7*var(--s)),
+    var(--g) calc(2*var(--s)) calc(5*var(--s)),
+    var(--g) calc(3*var(--s)) calc(3*var(--s)),
+    var(--g) calc(5*var(--s)) calc(2*var(--s)),
+    var(--g) calc(7*var(--s)) calc(1*var(--s));
+  background-blend-mode:darken;
+
+  box-shadow: inset 0 0 120px 40px rgba(0, 0, 0, 0.167);
+
+}
+.App-container {
+  display: flex;
+  flex-direction: column; /* ¡La clave! Apila los elementos verticalmente */
+  justify-content: center;   /* Centra todo en el medio de la pantalla verticalmente */
+  align-items: center;       /* Centra todo horizontalmente */
+  min-height: 100vh;         /* Ocupa toda la altura de la pantalla */
+ 
+}
